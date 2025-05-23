@@ -1,1 +1,4 @@
-console.log(result)
+(()=>{
+//     console.log("hiiiiii")
+
+// })()
