@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkbox Button Enable</title>
+  <style>
+    body {
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    .button {
+      background-color: #238636;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: not-allowed;
+      opacity: 0.5;
+      transition: 0.3s ease;
+    }
+
+    .button.enabled {
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    .checkbox {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <label class="checkbox">
+    <input type="checkbox" id="termsCheck">
+    I hereby accept the <a href="#">Terms of Service</a>. For more information about GitHub's privacy practices, see the <a href="#">GitHub Privacy Statement</a>.
+  </label>
+
+  <br><br>
+
+  <button class="button" id="setupButton" disabled>Setting up organization...</button>
+
+  <script>
+    const checkbox = document.getElementById('termsCheck');
+    const button = document.getElementById('setupButton');
+
+    checkbox.addEventListener('change', () => {
+      if (checkbox.checked) {
+        button.disabled = false;
+        button.classList.add('enabled');
+      } else {
+        button.disabled = true;
+        button.classList.remove('enabled');
+      }
+    });
+  </script>
+
+</body>
+</html>
